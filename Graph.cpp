@@ -1,11 +1,11 @@
 #include "Graph.h"
 
-int::Graph::countPaths(vector<vector<int>>& grid) {
+int::Graph::countPaths(std::vector<std::vector<int>>& grid) {
 	int r = grid.size(), c = grid[0].size();
 	if (r == 0 || c == 0) {
 		return 0;
 	}
-	auto memo = vector<vector<int>>(r, vector<int>(c));
+	auto memo = std::vector<std::vector<int>>(r, std::vector<int>(c));
 	int ans = 0;
 	for (int i = 0; i < r; ++i) {
 		for (int j = 0; j < c; ++j) {
@@ -15,7 +15,7 @@ int::Graph::countPaths(vector<vector<int>>& grid) {
 	return ans;
 }
 
-int::Graph::dfs(int x, int y, vector<vector<int>>& memo, vector<vector<int>>& grid) {
+int::Graph::dfs(int x, int y, std::vector<std::vector<int>>& memo, std::vector<std::vector<int>>& grid) {
 	//visited
 	if (memo[x][y] != 0) {
 		return memo[x][y];
